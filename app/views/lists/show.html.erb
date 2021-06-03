@@ -1,13 +1,12 @@
 <h2><%= @list.name %></h2>
   <% @bookmarks.each do |bookmark| %>
   <%= bookmark.movie.title %>
+  <%= bookmark.movie.overview %>
+  <%= bookmark.movie.poster_url %>
+  <%= bookmark.movie.rating %>
+  <%= bookmark.comment %>
   <% end %>
 
-
-
-
-
+<%= link_to "create a bookmark", new_list_bookmark_path(@list.id), class: "btn btn-info" %>
 <%= link_to "back", lists_path, class: "btn btn-info"  %>
-<%= console %>
-
 
