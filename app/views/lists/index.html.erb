@@ -1,0 +1,13 @@
+<div class="banner">
+  <h1>List</h1>
+</div>
+
+<div class="container">
+    <% @lists.each do |list|  %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+        <% end %>
+</div>
+
+<%= link_to "create a list", new_list_path, class: "btn btn-info"  %>

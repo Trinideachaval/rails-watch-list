@@ -21,3 +21,7 @@ movies.each do |movie|
   movie = Movie.create(title: title, overview: overview, poster_url: poster_url, rating: rating)
   puts movie.title
 end
+
+List.create(name: "Drama")
+List.create(name: "Thriller")
+List.create(name: "Action")

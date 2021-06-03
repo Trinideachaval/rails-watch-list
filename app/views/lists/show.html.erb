@@ -1,0 +1,13 @@
+<h2><%= @list.name %></h2>
+  <% @bookmarks.each do |bookmark| %>
+  <%= bookmark.movie.title %>
+  <% end %>
+
+
+
+
+
+<%= link_to "back", lists_path, class: "btn btn-info"  %>
+<%= console %>
+
+
