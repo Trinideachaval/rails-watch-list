@@ -3,6 +3,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  position:relative;
 }
 
 .banner h1 {
@@ -12,5 +13,12 @@
   font-size: 32px;
   font-weight: bold;
   text-align: center;
+}
+
+.banner a {
+  position:absolute;
+  bottom: 0px;
+  right: 0px;
+  margin: 8px;
 }
 

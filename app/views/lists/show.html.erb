@@ -1,12 +1,24 @@
-<h2><%= @list.name %></h2>
-  <% @bookmarks.each do |bookmark| %>
-  <%= bookmark.movie.title %>
-  <%= bookmark.movie.overview %>
-  <%= bookmark.movie.poster_url %>
-  <%= bookmark.movie.rating %>
-  <%= bookmark.comment %>
-  <% end %>
+  <div class="banner">
+    <h1><%= @list.name%> movies</h1>
+    <span class = "movie-tag1"><%= pluralize(@list.movies.size, "movie")%></span>
+    <%= link_to "Add a movie", new_list_bookmark_path(@list.id), class: "btn btn-info" %>
+  </div>
 
-<%= link_to "create a bookmark", new_list_bookmark_path(@list.id), class: "btn btn-info" %>
+  <div class="grid">
+   <% @bookmarks.each do |bookmark| %>
+  <div class="card-trip">
+    <div class="card-trip-infos">
+        <%=  image_tag bookmark.movie.poster_url %>
+        <h2> <%= bookmark.movie.title %></h2>
+        <p><%= bookmark.movie.overview %></p>
+        <p><%= bookmark.movie.rating %></p>
+        <p> <%= bookmark.comment %></p>
+        <small class= "text-right flex-shrink-0"><%= link_to "Delete a bookmark", bookmark_path(bookmark), method: :delete, data: { confirm: "Are you sure you want to delete #{bookmark.movie.title} from #{@list.name}"}, class: 'text-danger' %></small>
+      </div>
+    </div>
+  <% end %>
+  </div>
+
 <%= link_to "back", lists_path, class: "btn btn-info"  %>
+<%= link_to "Delete list", list_path(@list), method: :delete, data: { confirm: "Are you sure you want to delete this list?"}, class: "btn btn-info" %>
 
