@@ -1,6 +1,6 @@
   <div class="banner">
     <h1><%= @list.name%> movies</h1>
-    <span class = "movie-tag1"><%= pluralize(@list.movies.size, "movie")%></span>
+    <span class = "movie-tag"><%= pluralize(@list.movies.size, "movie")%></span>
     <%= link_to "Add a movie", new_list_bookmark_path(@list.id), class: "btn btn-info" %>
   </div>
 

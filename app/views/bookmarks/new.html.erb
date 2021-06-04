@@ -1,10 +1,11 @@
+<%= simple_form_for [@list, @bookmark] do |f| %>
   <div class="form-inputs">
-    <%= simple_form_for [@list, @bookmark] do |f| %>
     <%= f.input :comment %>
     <%= f.association :movie, prompt: 'Select movie', input_html: { class: 'select2' } %>
   </div>
   <div class="form-actions">
     <%= f.submit class: "btn btn-info" %>
   </div>
-<% end %>
+  <% end %>
+
 
